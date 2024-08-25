@@ -1,6 +1,5 @@
 {% set version = '0.0.5' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-tidydr
@@ -13,8 +12,7 @@ source:
   sha256: 3c72a53922365a043f34bf50ecfaf9f0ab332a13c17d0910199ca948da826f9b
 
 build:
-  merge_build_host: True  # [win]
-  number: 0
+  number: 1
   noarch: generic
   rpaths:
     - lib/R/lib/
