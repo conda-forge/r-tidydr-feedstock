@@ -1,4 +1,4 @@
-{% set version = '0.0.5' %}
+{% set version = "0.0.6" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tidydr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tidydr/tidydr_{{ version }}.tar.gz
-  sha256: 3c72a53922365a043f34bf50ecfaf9f0ab332a13c17d0910199ca948da826f9b
+  sha256: 1faf44cfe0b320ea8b71d3f0176b47e924628d09c1dae7644fe3204ba766c601
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -28,11 +28,13 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-cluster
     - r-ggfun
     - r-ggplot2
     - r-rlang
   run:
     - r-base
+    - r-cluster
     - r-ggfun
     - r-ggplot2
     - r-rlang
@@ -45,9 +47,7 @@ test:
 about:
   home: https://github.com/YuLab-SMU/tidydr/
   license: Artistic-2.0
-  summary: Dimensionality reduction (DR) is widely used in many domain for analyzing and visualizing
-    high-dimensional data. 'tidydr' provides uniform output and is compatible with multiple
-    methods, including 'prcomp', 'mds', 'Rtsne'. etc.
+  summary: Dimensionality reduction (DR) is widely used in many domain for analyzing and visualizing high-dimensional data. 'tidydr' provides uniform output and is compatible with multiple methods, including 'prcomp', 'mds', 'Rtsne'. etc.
   license_family: OTHER
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/Artistic-2.0'
