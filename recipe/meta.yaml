@@ -28,11 +28,13 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-cluster
     - r-ggfun
     - r-ggplot2
     - r-rlang
   run:
     - r-base
+    - r-cluster
     - r-ggfun
     - r-ggplot2
     - r-rlang
